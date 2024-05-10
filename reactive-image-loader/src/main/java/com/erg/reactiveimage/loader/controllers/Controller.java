@@ -1,10 +1,6 @@
 package com.erg.reactiveimage.loader.controllers;
-
-import com.erg.reactiveimage.loader.model.Image;
 import com.erg.reactiveimage.loader.services.ImageService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.data.mongodb.gridfs.ReactiveGridFsResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

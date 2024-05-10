@@ -1,6 +1,5 @@
 package com.erg.reactiveimage.loader.services;
 
-import com.erg.reactiveimage.loader.model.Image;
 import org.bson.types.ObjectId;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.data.mongodb.gridfs.ReactiveGridFsResource;

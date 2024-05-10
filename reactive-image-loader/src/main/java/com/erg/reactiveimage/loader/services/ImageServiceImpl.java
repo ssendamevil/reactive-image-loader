@@ -24,9 +24,7 @@ import java.io.IOException;
 public class ImageServiceImpl implements ImageService{
 
     private final ReactiveGridFsTemplate reactiveGridFsTemplate;
-
     private final ReactiveGridFsOperations reactiveGridFsOperations;
-
     @Override
     public Mono<ObjectId> uploadImage(Mono<FilePart> filePart) {
         return filePart
@@ -50,7 +48,7 @@ public class ImageServiceImpl implements ImageService{
                                 ImageIO.write(output, "webp", outputStream);
                                 byte[] resizedBytes = outputStream.toByteArray();
                                 outputStream.close();
-                                sink.next((DataBuffer) new DefaultDataBufferFactory().wrap(resizedBytes));
+                                sink.next(new DefaultDataBufferFactory().wrap(resizedBytes));
                             } catch (IOException e) {
                                 sink.error(new RuntimeException(e));
                             }
