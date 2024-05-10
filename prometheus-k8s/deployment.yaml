@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheusk8sapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: prometheusk8sapp
+  template:
+    metadata:
+      labels:
+        app: prometheusk8sapp
+    spec:
+      containers:
+        - name: prometheusk8sapp
+          image: aliorynbassar/prometheusk8sapp
+          ports:
+            - containerPort: 8787

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: prometheusk8sapp-liveness-http
+  labels:
+    app: prometheusk8sapp-liveness
+spec:
+  containers:
+    - name: prometheusk8sapp-liveness
+      image: aliorynbassar/prometheusk8sapp
+      args:
+        - liveness
+      livenessProbe:
+        httpGet:
+          port: 8787
+          path: /healthz
+          httpHeaders:
+            - name: Custom-Header
+              value: Awesome
+        initialDelaySeconds: 3
+        periodSeconds: 3
